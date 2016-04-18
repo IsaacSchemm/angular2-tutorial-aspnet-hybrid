@@ -1,0 +1,39 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <p class="lead">This is the Angular tutorial (through part 4) running on ASP.NET 4.</p>
+    <p class="lead">Libraries (Angular2, etc.) and compiled .js files were copied from the other project when this one was built.</p>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <my-app>Loading...</my-app>
+    </div>
+</div>
+
+@section Scripts {
+    <!-- 1. Load libraries -->
+    <!-- IE required polyfills, in this exact order -->
+    <script src="heroesapp/es6-shim.min.js"></script>
+    <script src="heroesapp/system-polyfills.js"></script>
+    <script src="heroesapp/shims_for_IE.js"></script>
+    <script src="heroesapp/angular2-polyfills.js"></script>
+    <script src="heroesapp/system.src.js"></script>
+    <script src="heroesapp/Rx.js"></script>
+    <script src="heroesapp/angular2.dev.js"></script>
+    <!-- 2. Configure SystemJS -->
+    <script>
+        System.config({
+          packages: {
+            heroesapp: {
+                format: 'register',
+                defaultExtension: 'js'
+            }
+          }
+        });
+        System.import('heroesapp/main').then(
+          null, console.error.bind(console));
+    </script>
+}
