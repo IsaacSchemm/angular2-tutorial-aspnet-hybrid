@@ -5,9 +5,7 @@ Click here to learn more. http://go.microsoft.com/fwlink/?LinkId=518007
 */
 
 var gulp = require('gulp'),
-    rimraf = require('rimraf'),
-    uglify = require('gulp-uglify'),
-    concat = require('gulp-concat');
+    rimraf = require('rimraf');
 
 
 var js = [
