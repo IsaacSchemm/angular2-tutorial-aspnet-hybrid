@@ -4,8 +4,8 @@ obj
 *.user
 packages
 
-node_modules/
-wwwroot/app/
-wwwroot/fonts/
-wwwroot/js/
-wwwroot/css/
+node_modules
+AspNetCoreProj/wwwroot/app
+AspNetCoreProj/wwwroot/fonts
+AspNetCoreProj/wwwroot/js
+AspNetCoreProj/wwwroot/css
