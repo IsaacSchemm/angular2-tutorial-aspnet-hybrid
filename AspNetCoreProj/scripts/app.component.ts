@@ -7,6 +7,9 @@ import {HeroService} from './hero.service';
     template: `
         <h1>{{title}}</h1>
         <h2>My Heroes</h2>
+        <div *ngIf="heroes != null && heroes.length == 0">
+          No heroes were found. Maybe there was an error trying to get the data over HTTP? In that case, you might want to use the mock data instead - see hero.service.ts.
+        </div>
         <ul class="heroes">
           <li *ngFor="#hero of heroes"
             [class.selected]="hero === selectedHero"
@@ -74,7 +77,10 @@ export class AppComponent implements OnInit {
     selectedHero: Hero;
     constructor(private _heroService: HeroService) { }
     getHeroes() {
-        this._heroService.getHeroes().then(heroes => this.heroes = heroes);
+        this._heroService.getHeroes().then(heroes => this.heroes = heroes).catch(x => {
+            console.log(x);
+            this.heroes = [];
+        });
     }
     ngOnInit() {
         this.getHeroes();

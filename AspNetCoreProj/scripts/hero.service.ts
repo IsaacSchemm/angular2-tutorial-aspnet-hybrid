@@ -1,22 +1,28 @@
 ﻿import {Injectable} from 'angular2/core';
 import {Hero} from './hero';
-import {HEROES} from './mock-heroes';
+//import {HEROES} from './mock-heroes';
+import {Http} from 'angular2/http';
+
+import 'rxjs/add/operator/map'
+import 'rxjs/add/operator/toPromise'
+
 @Injectable()
 export class HeroService {
-    getHeroes() {
-        return Promise.resolve(HEROES);
+    constructor(public http: Http) {
+        this.http = http;
     }
-    // See the "Take it slow" appendix
-    getHeroesSlowly() {
-        return new Promise<Hero[]>(resolve =>
-            setTimeout(() => resolve(HEROES), 2000) // 2 seconds
-        );
+    getHeroes() {
+        return this.http.get("/Heroes/GetList")
+            .map(res => res.json())
+            .map((tasks: Array<any>) => {
+                let result: Array<Hero> = [];
+                if (tasks) {
+                    tasks.forEach((task) => {
+                        result.push(task);
+                    });
+                }
+                return result;
+            }).toPromise();
+        //return Promise.resolve(HEROES);
     }
 }
-
-
-/*
-Copyright 2016 Google Inc. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
-*/
