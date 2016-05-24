@@ -17,26 +17,26 @@
     <base href="/" />
     <!-- 1. Load libraries -->
     <!-- IE required polyfills, in this exact order -->
-    <script src="/heroesapp/es6-shim.min.js"></script>
-    <script src="/heroesapp/system-polyfills.js"></script>
-    <script src="/heroesapp/shims_for_IE.js"></script>
-    <script src="/heroesapp/angular2-polyfills.js"></script>
-    <script src="/heroesapp/system.src.js"></script>
-    <script src="/heroesapp/Rx.js"></script>
-    <script src="/heroesapp/angular2.dev.js"></script>
-    <script src="/heroesapp/http.dev.js"></script>
-    <script src="/heroesapp/router.js"></script>
+    <script src="/app/es6-shim.min.js"></script>
+    <script src="/app/system-polyfills.js"></script>
+    <script src="/app/shims_for_IE.js"></script>
+    <script src="/app/angular2-polyfills.js"></script>
+    <script src="/app/system.src.js"></script>
+    <script src="/app/Rx.js"></script>
+    <script src="/app/angular2.dev.js"></script>
+    <script src="/app/http.dev.js"></script>
+    <script src="/app/router.js"></script>
     <!-- 2. Configure SystemJS -->
     <script>
         System.config({
           packages: {
-            heroesapp: {
+            app: {
                 format: 'register',
                 defaultExtension: 'js'
             }
           }
         });
-        System.import('heroesapp/main').then(
+        System.import('app/main').then(
           null, console.error.bind(console));
     </script>
 }

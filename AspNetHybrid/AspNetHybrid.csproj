@@ -239,8 +239,8 @@
     <Content Include="Views\Heroes\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="app\" />
     <Folder Include="App_Data\" />
-    <Folder Include="heroesapp\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -286,8 +286,8 @@
     <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
   </Target>
   <PropertyGroup>
-    <PreBuildEvent>COPY $(SolutionDir)\AspNetCoreProj\wwwroot\app\*.* $(ProjectDir)\heroesapp\
-COPY $(SolutionDir)\AspNetCoreProj\wwwroot\js\*.* $(ProjectDir)\heroesapp\</PreBuildEvent>
+    <PreBuildEvent>COPY $(SolutionDir)\AspNetCoreProj\wwwroot\app\*.* $(ProjectDir)\app\
+COPY $(SolutionDir)\AspNetCoreProj\wwwroot\js\*.* $(ProjectDir)\app\</PreBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.

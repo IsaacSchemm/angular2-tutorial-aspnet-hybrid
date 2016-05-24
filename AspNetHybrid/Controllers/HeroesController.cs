@@ -29,19 +29,22 @@ namespace AspNetHybrid.Controllers
                 this.name = name;
             }
         }
+
+        private Hero[] HEROES = new Hero[] {
+            new Hero(21, "Cosmo-Bug"),
+            new Hero(22, "Monsterkid"),
+            new Hero(23, "Grenadine"),
+            new Hero(24, "Night Wizard"),
+            new Hero(25, "White Stripe"),
+            new Hero(26, "Quicksand")
+        };
         
-        public ActionResult GetList()
-        {
-            System.Threading.Thread.Sleep(2000);
-            Hero[] array = new Hero[] {
-                new Hero(21, "Cosmo-Bug"),
-                new Hero(22, "Monsterkid"),
-                new Hero(23, "Grenadine"),
-                new Hero(24, "Night Wizard"),
-                new Hero(25, "White Stripe"),
-                new Hero(26, "Quicksand")
-            };
-            return Json(array, JsonRequestBehavior.AllowGet);
+        public ActionResult GetList() {
+            return Json(HEROES, JsonRequestBehavior.AllowGet);
+        }
+        
+        public ActionResult GetHero(int id) {
+            return Json(HEROES.SingleOrDefault(h => h.id == id), JsonRequestBehavior.AllowGet);
         }
     }
 }

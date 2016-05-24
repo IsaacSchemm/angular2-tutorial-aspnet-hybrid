@@ -50,7 +50,7 @@ namespace AspNetCoreProj {
         
         [HttpGet]
         public Hero GetHero(int id) {
-            return HEROES.Single(h => h.id == id);
+            return HEROES.SingleOrDefault(h => h.id == id);
         }
     }
 }
