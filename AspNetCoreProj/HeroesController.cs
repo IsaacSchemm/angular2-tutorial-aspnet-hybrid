@@ -29,6 +29,11 @@ namespace AspNetCoreProj {
             return View("Index");
         }
 
+        [HttpGet]
+        public ActionResult Dashboard() {
+            return View("Index");
+        }
+
         // GET: api/values
         [HttpGet]
         public IEnumerable<Hero> GetList() {

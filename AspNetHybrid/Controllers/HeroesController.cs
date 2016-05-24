@@ -16,6 +16,10 @@ namespace AspNetHybrid.Controllers
             return View("Index");
         }
 
+        public ActionResult Dashboard() {
+            return View("Index");
+        }
+
         public class Hero {
             public int id;
             public string name;
