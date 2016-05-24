@@ -34,17 +34,23 @@ namespace AspNetCoreProj {
             return View("Index");
         }
 
-        // GET: api/values
+        private Hero[] HEROES = new Hero[] {
+            new Hero(21, "Cosmo-Bug"),
+            new Hero(22, "Monsterkid"),
+            new Hero(23, "Grenadine"),
+            new Hero(24, "Night Wizard"),
+            new Hero(25, "White Stripe"),
+            new Hero(26, "Quicksand")
+        };
+        
         [HttpGet]
         public IEnumerable<Hero> GetList() {
-            return new Hero[] {
-                new Hero(21, "Cosmo-Bug"),
-                new Hero(22, "Monsterkid"),
-                new Hero(23, "Grenadine"),
-                new Hero(24, "Night Wizard"),
-                new Hero(25, "White Stripe"),
-                new Hero(26, "Quicksand")
-            };
+            return HEROES;
+        }
+        
+        [HttpGet]
+        public Hero GetHero(int id) {
+            return HEROES.Single(h => h.id == id);
         }
     }
 }
