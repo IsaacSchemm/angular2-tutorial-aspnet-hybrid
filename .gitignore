@@ -10,4 +10,4 @@ AspNetCoreProj/wwwroot/app/*.map
 AspNetCoreProj/wwwroot/fonts
 AspNetCoreProj/wwwroot/js
 AspNetCoreProj/wwwroot/css
-heroesapp
+AspNetHybrid/app

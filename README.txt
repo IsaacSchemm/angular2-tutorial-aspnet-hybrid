@@ -1,4 +1,4 @@
-Part of Angular 2's tutorial (through part 5) added to an ASP.NET 4 application.
+Part of Angular 2's tutorial (through part 6) added to an ASP.NET 4 application.
 
 ASP.NET Core (vNext) includes tooling that makes using npm + TypeScript +
 Angular2 from within VS2015 more straightforward. ASP.NET 4.x projects don't
