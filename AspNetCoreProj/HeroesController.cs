@@ -7,7 +7,7 @@ using Microsoft.AspNet.Mvc;
 // For more information on enabling Web API for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace AspNetCoreProj {
-    [Route("Heroes/GetList")]
+    [Route("Heroes/[action]")]
     public class HeroesController : Controller {
         public class Hero {
             public int id { get; set; }
@@ -19,9 +19,19 @@ namespace AspNetCoreProj {
             }
         }
 
+        [HttpGet]
+        public ActionResult Index() {
+            return View("Index");
+        }
+
+        [HttpGet]
+        public ActionResult Heroes() {
+            return View("Index");
+        }
+
         // GET: api/values
         [HttpGet]
-        public IEnumerable<Hero> Get() {
+        public IEnumerable<Hero> GetList() {
             return new Hero[] {
                 new Hero(21, "Cosmo-Bug"),
                 new Hero(22, "Monsterkid"),

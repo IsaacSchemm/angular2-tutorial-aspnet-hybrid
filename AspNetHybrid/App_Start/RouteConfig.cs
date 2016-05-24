@@ -13,8 +13,8 @@ namespace AspNetHybrid {
             // The Angular2 application here is set up in such a way so that it expects relative paths to be relative to the root.
             routes.MapRoute(
                 name: "HeroesDemo",
-                url: "Heroes",
-                defaults: new { controller = "Heroes", action = "Index" }
+                url: "Heroes/{action}",
+                defaults: new { controller = "Heroes" }
             );
 
             routes.MapRoute(

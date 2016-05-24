@@ -19,7 +19,7 @@ import {RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS} from 'angular2/router'
 })
 @RouteConfig([
     {
-        path: '/heroes',
+        path: '/Heroes/Heroes',
         name: 'Heroes',
         component: HeroesComponent
     }

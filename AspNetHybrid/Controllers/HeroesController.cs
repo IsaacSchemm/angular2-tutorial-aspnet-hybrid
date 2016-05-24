@@ -8,13 +8,12 @@ namespace AspNetHybrid.Controllers
 {
     public class HeroesController : Controller
     {
-        // GET: Heroes
-        public ActionResult Index()
-        {
-            if (Request.Url.AbsolutePath != "/Heroes") {
-                return RedirectToAction("Index");
-            }
+        public ActionResult Index() {
             return View();
+        }
+
+        public ActionResult Heroes() {
+            return View("Index");
         }
 
         public class Hero {
