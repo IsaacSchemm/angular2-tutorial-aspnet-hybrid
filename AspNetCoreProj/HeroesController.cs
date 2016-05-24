@@ -41,7 +41,9 @@ namespace AspNetCoreProj {
                 new Hero(21, "Cosmo-Bug"),
                 new Hero(22, "Monsterkid"),
                 new Hero(23, "Grenadine"),
-                new Hero(24, "Night Wizard")
+                new Hero(24, "Night Wizard"),
+                new Hero(25, "White Stripe"),
+                new Hero(26, "Quicksand")
             };
         }
     }

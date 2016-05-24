@@ -23,15 +23,23 @@ namespace AspNetHybrid.Controllers
         public class Hero {
             public int id;
             public string name;
+
+            public Hero(int id, string name) {
+                this.id = id;
+                this.name = name;
+            }
         }
         
         public ActionResult GetList()
         {
             System.Threading.Thread.Sleep(2000);
             Hero[] array = new Hero[] {
-                new Hero { id = 20, name = "Grenadine" },
-                new Hero { id = 21, name = "Metalen Meisje" },
-                new Hero { id = 22, name = "Monsterkid" },
+                new Hero(21, "Cosmo-Bug"),
+                new Hero(22, "Monsterkid"),
+                new Hero(23, "Grenadine"),
+                new Hero(24, "Night Wizard"),
+                new Hero(25, "White Stripe"),
+                new Hero(26, "Quicksand")
             };
             return Json(array, JsonRequestBehavior.AllowGet);
         }
